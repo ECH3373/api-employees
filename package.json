@@ -20,8 +20,7 @@
     "express": "^4.21.2",
     "express-async-errors": "^3.1.1",
     "mongoose": "^8.13.0",
-    "querymen": "^2.1.4",
-    "uuid": "^11.1.0"
+    "querymen": "^2.1.4"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"

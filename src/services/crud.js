@@ -25,7 +25,7 @@ const index = async ({ model, params = {}, expand = [] }) => {
   return { data, meta };
 };
 
-const show = async ({ model, value, fields = ['_id', 'id'] } = {}) => {
+const show = async ({ model, value, fields = ['_id'] } = {}) => {
   for (const field of fields) {
     try {
       const query = { [field]: value };

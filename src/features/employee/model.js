@@ -1,15 +1,7 @@
 import mongoose from 'mongoose';
-import { v4 } from 'uuid';
 
 const schema = new mongoose.Schema(
   {
-    id: {
-      type: String,
-      default: v4,
-      unique: true,
-      index: true,
-    },
-
     code: {
       type: String,
       trim: true,
