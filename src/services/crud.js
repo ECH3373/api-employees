@@ -1,7 +1,8 @@
 const index = async ({ model, params = {}, expand = [] }) => {
   const data = await model.find(params.query).limit(params.cursor.limit).skip(params.cursor.skip).sort(params.cursor.sort).lean();
   const total = await model.countDocuments(params.query);
-  const meta = { pagination: { page: 1, pages: Math.ceil(total / params.cursor.limit), total } };
+  const page = Math.floor(params.cursor.skip / params.cursor.limit) + 1;
+  const meta = { pagination: { page, pages: Math.ceil(total / params.cursor.limit), total } };
 
   if (expand.length > 0) {
     for (const { in: inField, as, api } of expand) {
