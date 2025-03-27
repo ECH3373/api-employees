@@ -1,8 +1,8 @@
 import { helpers } from '../../helpers/index.js';
 
 const index = helpers.query.index({
-  search: ['name', 'description'],
-  filters: ['name'],
+  search: ['code', 'name'],
+  filters: ['is_active', 'department_id'],
 });
 
 export const query = {
