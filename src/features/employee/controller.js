@@ -5,13 +5,13 @@ const expand = [{ in: 'department_id', as: 'department', api: services.api.get_d
 
 const index = async (req, res) => {
   const { data, meta } = await services.crud.index({ model, params: req.querymen, expand });
-  return services.response.send({ res, data, meta, message: 'the list of apps has been successfully retrieved' });
+  return services.response.send({ res, data, meta, message: 'the list of employees has been successfully retrieved' });
 };
 
 const show = async (req, res) => {
   const data = await services.crud.show({ model, value: req.params.id });
-  if (!data) return services.response.send({ res, data, error: 'the app with the provided ID does not exist' });
-  services.response.send({ res, data, message: 'app successfully retrieved' });
+  if (!data) return services.response.send({ res, data, error: 'the employee with the provided ID does not exist' });
+  services.response.send({ res, data, message: 'employee successfully retrieved' });
 };
 
 export const controller = {

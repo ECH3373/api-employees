@@ -42,4 +42,4 @@ const schema = new mongoose.Schema(
   { versionKey: false },
 );
 
-export const model = mongoose.model('Department', schema);
+export const model = mongoose.model('Employee', schema);
