@@ -9,7 +9,7 @@ const index = async (req, res) => {
 };
 
 const show = async (req, res) => {
-  const data = await services.crud.show({ model, value: req.params.id, fields: ['_id', 'code'] });
+  const data = await services.crud.show({ model, value: req.params.id, fields: ['_id', 'code'], expand });
   if (!data) return services.response.send({ res, data, error: 'the employee with the provided ID does not exist' });
   services.response.send({ res, data, message: 'employee successfully retrieved' });
 };

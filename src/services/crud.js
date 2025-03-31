@@ -26,18 +26,26 @@ const index = async ({ model, params = {}, expand = [] }) => {
   return { data, meta };
 };
 
-const show = async ({ model, value, fields = ['_id'] } = {}) => {
+const show = async ({ model, value, fields = ['_id'], expand = [] } = {}) => {
   for (const field of fields) {
     try {
       const query = { [field]: value };
-      const data = await model.findOne(query);
-      if (data) return data;
+      const data = await model.findOne(query).lean();
+
+      if (expand.length > 0) {
+        for (const { in: inField, as, api } of expand) {
+          const id = data[inField];
+          const related = await api(id);
+          data[as] = related || null;
+          delete data[inField];
+        }
+      }
+
+      return data;
     } catch (error) {
       continue;
     }
   }
-
-  return null;
 };
 
 export const crud = {
