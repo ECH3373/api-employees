@@ -21,25 +21,25 @@ This API is designed to manage employees within an organization. It allows perfo
 
 ## Installation
 
-1. Clona el repositorio:
+1. Clone the repository:
 
    ```bash
-   git clone https://github.com/usuario/api-employees.git
+   git clone https://github.com/usuario/api-departments.git
    ```
 
-2. Navega al directorio del proyecto:
+2. Navigate to the project directory:
 
    ```bash
-   cd api-employees
+   cd api-departments
    ```
 
-3. Instala las dependencias:
+3. Install the dependencies:
 
    ```bash
    npm install
    ```
 
-4. Inicia el servidor de la API:
+4. Start the API server:
 
    ```bash
    npm start

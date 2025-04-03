@@ -1,7 +1,7 @@
 {
   "name": "employees",
   "version": "1.0.0",
-  "description": "",
+  "description": "Employee management application",
   "main": "index.js",
   "type": "module",
   "scripts": {
