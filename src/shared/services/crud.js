@@ -10,7 +10,9 @@ const index = async ({ model, query = {}, search = [], filters = [], expand = []
   const skip = (page - 1) * take;
 
   let orderBy = [];
-  if (query.sort) {
+  if (query.sort && Array.isArray(query.sort)) {
+    orderBy = query.sort;
+  } else if (query.sort) {
     try {
       const parsed = JSON.parse(query.sort);
       if (Array.isArray(parsed)) orderBy = parsed;
